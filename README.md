@@ -15,3 +15,7 @@ cmake ..
 make
 ./Sinewave
 ```
+
+**Demo:**
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/pGy9iuYPNvc/0.jpg)](http://www.youtube.com/watch?v=pGy9iuYPNvc)
