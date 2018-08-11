@@ -2,8 +2,8 @@
 #include <cmath>
 #include<iostream>
 #include<vector>
-#include "point.h"
-#include "draw.h"
+#include "include/point.h"
+#include "include/draw.h"
 
 using namespace std;
 double frequency = .1;

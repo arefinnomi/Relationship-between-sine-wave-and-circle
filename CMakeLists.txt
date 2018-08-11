@@ -5,8 +5,8 @@ find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
 
 set(MY_HEADER_FILES
-        draw.h
-        point.h
+        include/draw.h
+        include/point.h
         )
 
 set(MY_SOURCE_FILES
