@@ -1,6 +1,6 @@
 # Relationship between sine wave and circle
 
-This project,written in C++, illustrate the relationship between sine wave and circle. OpenGL has been used to develop this project.
+This project, written in C++, illustrate the relationship between sine wave and circle. OpenGL has been used to develop this project.
 
 
 **Requirement:**  
