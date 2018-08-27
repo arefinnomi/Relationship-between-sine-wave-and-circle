@@ -18,4 +18,4 @@ make
 
 **Demo:**
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/pGy9iuYPNvc/0.jpg)](http://www.youtube.com/watch?v=pGy9iuYPNvc)
+[![Watch Demo](https://i.imgur.com/3e69ZGT.png)](http://www.youtube.com/watch?v=pGy9iuYPNvc)
