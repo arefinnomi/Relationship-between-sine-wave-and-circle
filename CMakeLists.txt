@@ -1,28 +1,31 @@
-cmake_minimum_required(VERSION 2.6)
-project(Sinewave)
+cmake_minimum_required(VERSION 3.15)
+project(SineWave)
 
+# Set C++ standard to C++11
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Find required packages
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
 
-set(MY_HEADER_FILES
+# Include directories
+include_directories(include ${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS})
+
+# Add source files
+set(SOURCES
+        main.cpp
         include/draw.h
         include/point.h
         )
 
-set(MY_SOURCE_FILES
-        main.cpp
-        )
+# Create executable
+add_executable(SineWave ${SOURCES})
 
-include_directories(
-
-)
-add_executable(Sinewave
-        ${MY_HEADER_FILES}
-        ${MY_SOURCE_FILES}
-        )
-target_link_libraries(Sinewave
+# Link libraries
+target_link_libraries(SineWave
         ${OPENGL_LIBRARY} # filled by "find_package(OpenGL REQUIRED)"
-        ${GLUT_LIBRARY}
+        glut
         )
 
 

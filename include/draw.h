@@ -1,23 +1,19 @@
-#include "GL/gl.h"
-#include "GL/freeglut.h"
+#ifndef DRAW_H_INCLUDED
+#define DRAW_H_INCLUDED
+
+#include <GL/gl.h>
 #include <cmath>
-#include <iostream>
 #include "point.h"
-#include <vector>
 
-
-using namespace std;
-
-void draw_circle(float cx, float cy, float r, int num_segments) {
-    float theta = (float) (2 * 3.1415926 / float(num_segments));
-    float tangential_factor = tanf(theta);//calculate the tangential factor
-    float radial_factor = cosf(theta);//calculate the radial factor
-    float x = r;//start at angle = 0;
+void drawCircle(float cx, float cy, float radius, int numSegments) {
+    auto theta = static_cast<float>(2 * M_PI / numSegments);
+    float tangentialFactor = tanf(theta);
+    float radialFactor = cosf(theta);
+    float x = radius; //start at angle = 0
     float y = 0;
 
     glBegin(GL_LINE_LOOP);
-    for (int i = 0; i < num_segments; i++) {
-
+    for (int i = 0; i < numSegments; i++) {
         glVertex3f(x + cx, y + cy, 0);//output vertex
         //calculate the tangential vector
         //the radial vector is (x,y)
@@ -28,25 +24,25 @@ void draw_circle(float cx, float cy, float r, int num_segments) {
 
         //add tangential vector
 
-        x += tx * tangential_factor;
-        y += ty * tangential_factor;
+        x += tx * tangentialFactor;
+        y += ty * tangentialFactor;
 
         //correct using radial factor
 
-        x *= radial_factor;
-        y *= radial_factor;
+        x *= radialFactor;
+        y *= radialFactor;
     }
     glEnd();
 }
 
-void draw_line(Point p1, Point p2) {
+void drawLine(const Point &p1, const Point &p2) {
     glBegin(GL_LINES);
     glVertex2d(p1.x, p1.y);
     glVertex2d(p2.x, p2.y);
     glEnd();
 }
 
-void draw_wave_vector(vector<Point> points) {
+void drawWaveVector(const std::vector<Point> &points) {
     for (unsigned int i = 0; i < points.size() - 1; i++) {
         glBegin(GL_LINES);
         glVertex2i(points[i].x, points[i].y);
@@ -54,3 +50,5 @@ void draw_wave_vector(vector<Point> points) {
         glEnd();
     }
 }
+
+#endif // DRAW_H_INCLUDED
